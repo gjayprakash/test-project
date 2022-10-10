@@ -8,25 +8,18 @@ export default function Posts() {
 
   React.useEffect(() => {
     axios.get('https://my-json-server.typicode.com/Codeinwp/front-end-internship-api/posts').then((response) => {
-
       console.log(response.data);
       setPosts(response.data);
     });
   }, []);
 
   if (!Posts) return null;
-
-  return (
+return (
     <div>
-
-
       {
         Posts
           .map(Posts =>
-            
-
             <Card key={Posts.id} className="container col-4 mb-3">
-              
               <Card.Body>
                 <blockquote className="blockquote mb-0">
                   <p>
@@ -44,6 +37,8 @@ export default function Posts() {
 
               </Card.Body>
             </Card>
+
+            
 
 
           )
